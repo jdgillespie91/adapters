@@ -13,9 +13,9 @@ help:
 	@echo "test - run tox"
 
 .env:
-	python3 -m venv .env --clear
+	virtualenv -p $(which python) .env --clear
 	$(pip) install --upgrade pip
-	$(pip) install --upgrade wheel setuptools tox pip-tools
+	$(pip) install --upgrade wheel setuptools tox
 
 clean:
 	rm -rf build/
