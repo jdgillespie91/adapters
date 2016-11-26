@@ -2,6 +2,9 @@
 adapters
 =============================
 
+.. image:: https://semaphoreci.com/api/v1/jdgillespie91/adapters/branches/master/badge.svg
+    :target: https://travis-ci.org/jdgillespie91/adapters
+
 .. contents::
 
 
