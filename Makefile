@@ -13,7 +13,11 @@ help:
 	@echo "test - run tox"
 
 .env:
-	virtualenv -p /home/runner/.pyenv/3.5/bin/python .env --clear
+ifeq ($(CI),TRUE)
+		virtualenv -p /home/runner/.pyenv/3.5/bin/python .env --clear
+else
+		python3 -m venv .env --clear
+endif
 	$(pip) install --upgrade pip
 	$(pip) install --upgrade wheel setuptools tox
 
