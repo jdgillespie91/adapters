@@ -22,6 +22,8 @@ endif
 	$(pip) install --upgrade wheel setuptools tox
 
 clean:
+	rm -rf .env/
+	rm -rf .tox/
 	rm -rf build/
 	rm -rf dist/
 	rm -rf *.egg-info
@@ -29,7 +31,7 @@ clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 
-build: .env clean
+build: clean .env
 	$(python) setup.py bdist_wheel
 
 lint: .env
