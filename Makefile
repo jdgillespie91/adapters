@@ -6,10 +6,8 @@ pip = $(bin)/pip
 tox = $(bin)/tox
 
 help:
+	@echo "build - build the distribution wheel"
 	@echo "clean - remove build artifacts and python artifacts"
-	@echo ".env - make a virtual environment"
-	@echo "lint - check style with flake8"
-	@echo "isort - check import order with isort"
 	@echo "test - run tox"
 
 .env:
@@ -29,12 +27,6 @@ clean:
 
 build: clean .env
 	$(python) setup.py bdist_wheel
-
-lint: .env
-	$(tox) -e lint
-
-isort: .env
-	$(tox) -e isort
 
 test: .env
 	$(tox)
